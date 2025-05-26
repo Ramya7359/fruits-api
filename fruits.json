@@ -1,0 +1,32 @@
+[
+    {
+        "fruit": "banana",
+        "color": "yellow",
+        "id": 1
+    },
+    {
+        "fruit": "banana",
+        "color": "yellow",
+        "id": 2
+    },
+    {
+        "fruit": "banana",
+        "color": "yellow",
+        "id": 3
+    },
+    {
+        "fruit": "banana",
+        "color": "yellow",
+        "id": 4
+    },
+    {
+        "fruit": "apple",
+        "color": "red",
+        "id": 5
+    },
+    {
+        "fruit": "banana",
+        "color": "yellow",
+        "id": 6
+    }
+]
