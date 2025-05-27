@@ -91,6 +91,9 @@ docker build -t fruits-api .
 ```bash
 docker run -p 8000:8000 fruits-api
 ```
+Verify : http://localhost:8000/docs
+
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/30a715d1-011a-4cd9-b337-202b5034adf3" />
 
 ---
 
