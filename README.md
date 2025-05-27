@@ -1,16 +1,16 @@
-# 🍎 Fruits API
+# Fruits API
 
 A simple, FastAPI-based microservice to manage a list of fruits — complete with persistent storage, automated testing, and CI/CD pipeline.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🔍 **GET /fruits** – List all fruits
-- 🔍 **GET /fruits/{id}** – Get a fruit by its ID
-- ➕ **POST /fruits** – Add a new fruit (expects JSON)
+- **GET /fruits** – List all fruits
+- **GET /fruits/{id}** – Get a fruit by its ID
+- **POST /fruits** – Add a new fruit (expects JSON)
 
-### ✅ Example Request Payload
+### Example Request Payload
 
 ```json
 {
@@ -21,7 +21,7 @@ A simple, FastAPI-based microservice to manage a list of fruits — complete wit
 
 ---
 
-## 🧾 Example JSON Response
+## Example JSON Response
 
 ```json
 [
@@ -35,19 +35,19 @@ A simple, FastAPI-based microservice to manage a list of fruits — complete wit
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
-* 🐍 Python + FastAPI
-* 🗃 SQLite + SQLAlchemy
-* 🔬 Pytest for testing
-* 🐳 Docker for containerization
-* 🔁 GitHub Actions for CI/CD
+* Python + FastAPI
+* SQLite + SQLAlchemy
+* Pytest for testing
+* Docker for containerization
+* GitHub Actions for CI/CD
 
 ---
 
-## 📦 Installation & Usage
+## Installation & Usage
 
-### 🔧 Local Setup
+### Local Setup
 
 ```bash
 # Clone the repo
@@ -62,7 +62,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 🚀 Run the API Server
+### Run the API Server
 
 ```bash
 uvicorn app.main:app --reload
@@ -70,7 +70,7 @@ uvicorn app.main:app --reload
 
 ---
 
-## 🧪 Run Tests
+##  Run Tests
 
 ```bash
 PYTHONPATH=. pytest
@@ -78,15 +78,15 @@ PYTHONPATH=. pytest
 
 ---
 
-## 🐳 Docker
+## Docker
 
-### 🔨 Build Docker Image
+###  Build Docker Image
 
 ```bash
 docker build -t fruits-api .
 ```
 
-### ▶️ Run Container
+### ▶Run Container
 
 ```bash
 docker run -p 8000:8000 fruits-api
@@ -97,14 +97,14 @@ Verify : http://localhost:8000/docs
 
 ---
 
-## 🔁 CI/CD Pipeline
+## CI/CD Pipeline
 
 This project uses **GitHub Actions** to:
 
-* ✅ Run tests
-* 🛠 Build Docker image
-* 🚀 Push to Docker Hub (or GitHub Container Registry)
-* 📄 Workflow File: .github/workflows/ci.yml
+* Run tests
+* Build Docker image
+* Push to Docker Hub (or GitHub Container Registry)
+* Workflow File: .github/workflows/ci.yml
 
 ```
 name: CI
