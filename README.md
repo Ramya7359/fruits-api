@@ -107,17 +107,15 @@ This project uses **GitHub Actions** to:
 * Workflow File: .github/workflows/ci.yml
 
 ```
-name: CI
+ name: CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ master ]
 
 jobs:
-  test-and-build:
-    runs-on: ubuntu-latest
+  build-test-publish:
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -126,7 +124,9 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: '3.10'
+        check-latest: true
+        update-environment: true
 
     - name: Install dependencies
       run: |
@@ -135,9 +135,23 @@ jobs:
 
     - name: Run tests
       run: |
+        export PYTHONPATH="${{ github.workspace }}"
         pytest
 
-    - name: Build Docker image
+    - name: Build Docker image with SHA and latest tags
       run: |
-        docker build -t fruits-api .
+        IMAGE_TAG=${{ github.sha }}
+        docker build -t ramyamo/fruits-api:${IMAGE_TAG} -t ramyamo/fruits-api:latest .
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Push Docker images (SHA and latest)
+      run: |
+        IMAGE_TAG=${{ github.sha }}
+        docker push ramyamo/fruits-api:${IMAGE_TAG}
+        docker push ramyamo/fruits-api:latest
 ```
